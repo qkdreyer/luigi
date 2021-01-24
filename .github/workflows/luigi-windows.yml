@@ -1,0 +1,19 @@
+name: luigi-windows
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+    - run: curl -s https://gw.alipayobjects.com/os/enclose-prod/0d0ec8fd-dc9c-4b0a-85df-8bf4af0e8b8d/nodec-v1.5.0-x64.zip -o nodec-v1.5.0-x64.zip&&unzip nodec-v1.5.0-x64.zip
+    - run: curl -Ls https://github.com/pmq20/squashfuse/files/691217/sqfs43-win32.zip -o sqfs43-win32.zip&&unzip sqfs43-win32.zip
+    - run: dir
+    - run: ./nodec-v1.5.0-x64.exe index.js
