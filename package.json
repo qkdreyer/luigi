@@ -1,0 +1,16 @@
+{
+  "name": "luigi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^4.15.0",
+    "devnet-js": "^2.0.1"
+  }
+}
